@@ -1,0 +1,27 @@
+centrifugo:
+  manage_repo: True
+  service_enabled: True
+  config:
+    secret: 'very-long-secret-key'
+    port: 6060
+    admin: True
+    admin_password: 'stupidpassword'
+    admin_secret: 'very-stupid-secret'
+    web: True
+    connection_lifetime: 0
+    log_level: error
+    engine: redis
+    redis_api: True
+    redis_db: 0
+    redis_host: localhost
+    redis_pool: 256
+    redis_port: 6379
+    redis_api_num_shards: 2
+    namespaces:
+      name: public
+      publish: True
+      watch: True
+      presence: True
+      join_leave: True
+      history_size: 10
+      history_lifetime: 30

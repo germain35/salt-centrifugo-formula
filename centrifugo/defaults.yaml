@@ -1,0 +1,4 @@
+centrifugo:
+  manage_repo: True
+  service_enabled: True
+  service_reload: False 
