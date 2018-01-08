@@ -10,7 +10,7 @@
 centrifugo_repo_pkg:
   pkg.installed:
     - pkgs: 
-      - apt-transport-https
+      - apt-transport-https 
       - gnupg
     - require_in:
       - pkgrepo: centrifugo_repo
@@ -24,4 +24,3 @@ centrifugo_repo:
     {%- endfor %}
   {%- endif %}
 {%- endif %}
-

@@ -18,10 +18,10 @@ centrifugo:
     redis_port: 6379
     redis_api_num_shards: 2
     namespaces:
-      name: public
-      publish: True
-      watch: True
-      presence: True
-      join_leave: True
-      history_size: 10
-      history_lifetime: 30
+      - name: public
+        publish: True
+        watch: True
+        presence: True
+        join_leave: True
+        history_size: 10
+        history_lifetime: 30
