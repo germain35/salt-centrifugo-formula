@@ -5,6 +5,9 @@
 {%- set osrelease  = salt['grains.get']('osrelease') %}
 {%- set oscodename = salt['grains.get']('oscodename') %}
 
+include:
+  - centrifugo.install
+
 {%- if centrifugo.manage_repo %}
   {%- if osfamily == 'Debian' %}
 centrifugo_repo_pkg:
@@ -21,6 +24,8 @@ centrifugo_repo:
   pkgrepo.managed:
     {%- for k, v in centrifugo.repo.iteritems() %}
     - {{k}}: {{v}}
+    - require_in:
+      - pkg: centrifugo_package
     {%- endfor %}
   {%- endif %}
 {%- endif %}
